@@ -18,3 +18,5 @@ for passwordCheck in common_Passwords.split('\n'):
     elif hashPassword != passwordHash:
         print(f"Password did not matched! Checking {passwordCheck}... {hashPassword}")
 print("Password not available.")
+
+read -t 5 -p " "
