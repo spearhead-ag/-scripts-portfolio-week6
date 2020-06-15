@@ -11,12 +11,10 @@ common_Passwords = str(urlopen('https://raw.githubusercontent.com/danielmiessler
 for passwordCheck in common_Passwords.split('\n'):
     #hash the passwords
     hashPassword = hashlib.sha256(bytes(passwordCheck, 'utf-8')).hexdigest()
-    #check if passwords are the same
+    #check if password is the same against hidden password given
     if hashPassword == passwordHash:
         print(f"Password has been cracked! It was {passwordCheck}")
         quit()
     elif hashPassword != passwordHash:
         print(f"Password did not matched! Checking {passwordCheck}... {hashPassword}")
 print("Password not available.")
-
-read -t 5 -p " "
